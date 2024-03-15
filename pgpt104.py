@@ -17,6 +17,7 @@ import os
 from apikey import apikey
 import streamlit as st
 import time
+from dotenv import load_dotenv
 
 @st.cache_resource
 def get_data():
@@ -31,7 +32,7 @@ def get_data():
   vectorstore = FAISS.from_documents(texts, embedding=embeddings)
   return vectorstore
 
-os.environ["OPENAI_API_KEY"] = apikey
+load_dotenv()
 llm = ChatOpenAI(temperature=0)
 
 
