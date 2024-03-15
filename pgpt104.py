@@ -37,7 +37,7 @@ llm = ChatOpenAI(temperature=0)
 
 
 def main():
-  st.title("Udyog Mitr AI")
+  st.title("Udyog मित्र AI")
   user_query = st.text_input("Search Product")
   
   vectorstore = get_data()
