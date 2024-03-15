@@ -69,9 +69,3 @@ def main():
 
 if __name__ == "__main__":
   main()
-
-
-# query = "compare specification, price & vendor details of sporty saftey shoes in a table. Put 1 specification in a row"
-# result = conversation_chain.invoke({"question": query})
-# answer = result["answer"]
-# print(answer)
