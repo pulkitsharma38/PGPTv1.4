@@ -39,10 +39,9 @@ llm = ChatOpenAI(temperature=0)
 def main():
   st.title("Udyog Mitr AI")
   user_query = st.text_input("Search Product")
-  t2 = time.time()
+  
   vectorstore = get_data()
-  t3 = time.time()
-  print(user_query)
+  
   if user_query:    
     
     prompt_template = PromptTemplate.from_template(
@@ -61,11 +60,11 @@ def main():
       memory=memory,
       verbose=True
     )
-    t4 = time.time()
+    
     result = conversation_chain({"question": prompt})
-    t5 = time.time()
+    
     response = st.write(result["answer"])
-    print('Timing: get_data, retreive result', t3-t2, t5-t4)
+    
 
 if __name__ == "__main__":
   main()
